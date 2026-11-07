@@ -15,6 +15,11 @@ public class A3{
 		// Your code here...
 
 
+		//Probability for away matches:
+
+		probability = (nrOfMatches/2)
+
+
 		// WARNING! Do not change these lines. Use exactly these strings as your output.
 
 		System.out.println("Home:" + homeWins + " wins, " + homeTies + " ties, " + homeLoses + " loses");
