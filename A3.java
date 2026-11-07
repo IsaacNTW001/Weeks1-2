@@ -24,12 +24,12 @@ public class A3{
 
 
 		//Probability for Home matches:
-		int numberOfHomeMatches = (nrOfMatches/2)+1;
-		System.out.println(numberOfHomeMatches);
+		int numberOfHomeMatches = (nrOfMatches/2)+ (nrOfMatches%2);
+		//System.out.println(numberOfHomeMatches);
 
 		for(int i=0; i<=numberOfHomeMatches-1;i++){
 			//I wrote 101 due to the documentation behind Math.random generating a number in the following intervall: 0<=x<1;
-			probability = (int)((Math.random())*101);
+			probability = (int)((Math.random()*100)+1);
 			//Win probability for home matches.
 			if(probability>0 && probability<=66){
 				homeWins+=1;
@@ -51,15 +51,15 @@ public class A3{
 			homeBalance+= (homeWins*homeWinPayout) - ((homeTies+homeLosses)*homeLoseTiePayout);
 			//System.out.println(homeBalance);
 		}
-		System.out.println(homeBalance);
+		//System.out.println(homeBalance);
 		
 		//Probability for Away matches:
 		probability = 0;
-		System.out.println(probability);
+		//System.out.println(probability);
 		int numberOfAwayMatches = nrOfMatches/2;
-		System.out.println(numberOfAwayMatches);
+		//System.out.println(numberOfAwayMatches);
 		for(int j=0;j<=numberOfAwayMatches-1;j++){
-			probability = (int)((Math.random())*101);
+			probability = (int)((Math.random()*100)+1);
 			//Win probability for away matches.
 			if(probability>0 && probability<=30){
 				awayWins+=1;
@@ -78,7 +78,7 @@ public class A3{
 			awayBalance+= (awayWins*awayWinPayout) - ((awayTies+awayLosses)*homeLoseTiePayout);
 		}
 
-		System.out.println(awayBalance);
+		//System.out.println(awayBalance);
 		balance = homeBalance + awayBalance;
 		// WARNING! Do not change these lines. Use exactly these strings as your output.
 
