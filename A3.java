@@ -24,7 +24,7 @@ public class A3{
 
 
 		//Probability for Home matches:
-		int numberOfHomeMatches = (nrOfMatches/2)+1;
+		int numberOfHomeMatches = (nrOfMatches/2)+ (nrOfMatches%2);
 		System.out.println(numberOfHomeMatches);
 
 		for(int i=0; i<=numberOfHomeMatches-1;i++){
