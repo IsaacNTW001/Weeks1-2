@@ -35,7 +35,7 @@ public class A4{
 		// Your code here...
 		/*
 		This for loop gets the highest exponent for the desired base. Eg if the inputed number is 10 and the desired base is 2,
-		then it will loop until 2^4 =16 and compare it to the desired number. If if the integer with the exponent is bigger than 
+		then it will loop until 2^4 =16 and then compare it to the desired number. If if the integer with the exponent is bigger than 
 		the inputed number then it will store in in the variable counter and subract one since 16>10.
 	
 		*/
