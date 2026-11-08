@@ -5,11 +5,8 @@ public class A4{
 	private static String alphabetString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static char[] alphabetCharArray = alphabetString.toCharArray();
 	public static void main(String[] args) {
-		//int base10 =0;
-		//int base = 0;
 		
 		try{
-
 			base10 = Integer.parseInt(args[0]);
 			base = Integer.parseInt(args[1]);
 		}
@@ -19,16 +16,10 @@ public class A4{
 		}
 		
 		if(base>0){
-			//System.out.println(alphabetCharArray.length);
+
 			res=HandleBaseTwoToNine();
-			//System.out.println(res);
-
-
 		}
-		//else{
-			//res=HandleBase10AndBeyond();
 
-		//}
 		// WARNING! Do not change these lines. Use exactly these strings as your output.
 		System.out.println(base10 + " in base-10 is " + res + " in base-" + base);
 	}
@@ -36,78 +27,69 @@ public class A4{
 	public static String HandleBaseTwoToNine(){
 		String num = Integer.toString(base10);
 		String desiredNumber = Integer.toString(base);
-		//System.out.println("Value of num"+num);
-		//String res = "";
-		//int availableCharacters = base-1;
-		//int counter = base10;
+
 		int counter=0;
 		String temp = "0";
 	
-		//System.out.println("debugg");
+
 		// Your code here...
-
-		//Om talet är 10 så har vi 2^0 2^1 2^2 2^3 , 2^3 räcker efter som 2^4 = 15
-
-		//Beräknar den exponent till det talet som är precis < base10
+		/*
+		This for loop gets the highest exponent for the desired base. Eg if the inputed number is 10 and the desired base is 2,
+		then it will loop until 2^4 =16 and compare it to the desired number. If if the integer with the exponent is bigger than 
+		the inputed number then it will store in in the variable counter and subract one since 16>10.
+	
+		*/
 		for(int j=0; Integer.valueOf(temp)<base10;j++){
 			temp=Integer.toString((int)(Math.pow(base,j)));
 			if(Integer.valueOf(temp)>base10){
-
-				//System.out.println("tempdsds:"+temp);
 				counter=j-1;
-
 			}
-			//System.out.println("temp:"+temp);
+
 			
 		}
 
-		//System.out.println("Counter!"+counter);
+
 		String temp1="";
 		int remaining= base10;
-		//System.out.println(remaining);
+		/*
+		This loop iterates based on counter and divides the desired base raised to the power of counter to get the quota.
+		Eg. if it 10 base 10 --> ? base 2. The base raised to the power of counter will be 2^3 = 8 and then take it in order to
+		preform the following operation: 10/8. The 8 only fits one time in 10. which means our first digit is 1. We then take 10 and subtract it
+		with the base^counter to prepare for the next iteration of the loop. The loop continues until all digits that were input into base10 iterated through.
+
+		*/
 		for(int i=0; counter>=0;counter--){
-			//System.out.println("remaining:"+remaining);
+
 			temp1 = Integer.toString((int)((remaining)/(Math.pow(base,counter))));
 
-			//System.out.println("Before if statement: temp1:"+temp1);
-			//System.out.println("temp1:"+temp1);
-		
-
-			
-			//System.out.println("tempchar: "+tempchar);
 			if(Integer.valueOf(temp1)>0){
 				remaining = (int)(remaining%(Math.pow(base,counter)));
-				//System.out.println(remaining);
-				//System.out.println("exponent "+(Math.pow(base,counter)));
-
 				if(Integer.valueOf(temp1)>9){
 
 					temp1 = String.valueOf(HandleBase10AndBeyond(Integer.valueOf(temp1)));
 				}
-				//System.out.println("Inside if-loop remaining:"+remaining);
-				//System.out.println(Math.pow(base,counter));
-				//System.out.println("remaining"+remaining);
 			}
-			char tempchar= temp1.charAt(0);
-			res = res+tempchar;
 
-			//counter-=1;
-			
-	
+			char tempchar= temp1.charAt(0);
+			res = res+tempchar;			
 		}
 
 	return res;
 	}
+	/*
+	This method goes through a declared char array and gets the desired letter based on index.
+	The if statement contains -10 since we only start using letters if the quota is >9, since 10=A, 11=B and so on.
+	*/
 	public static char HandleBase10AndBeyond(int index){
 		char temp=' ';
 		for(int k=0;k<alphabetCharArray.length;k++){
 			if(k==(index-10)){
 				temp=alphabetCharArray[k];
-				//System.out.println("temp: "+temp);
+
 				return temp;
 			}
 		}
-		//char temp=alphabetCharArray[index-10];
+
 	return temp;
 	}
 
