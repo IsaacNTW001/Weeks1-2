@@ -1,0 +1,22 @@
+Bas 26
+10=A
+11=B
+12=C
+13=D
+osv.
+
+Jag måste konvertera siffran i bas 10 till en sträng. Sedan i en loop så måste jag gå igenom varje karaktär och konvertera den till den bas användaren matar in.Skriv sedan ut resultatet.
+
+Bas 2
+0 0
+1 1
+2 10
+3 11
+4 100
+5 101
+6 110
+7 111
+8 1000
+9 1001
+1 1010
+
