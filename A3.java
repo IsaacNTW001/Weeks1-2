@@ -24,12 +24,12 @@ public class A3{
 
 
 		//Probability for Home matches:
-		int numberOfHomeMatches = (nrOfMatches/2)+1;
+		int numberOfHomeMatches = (nrOfMatches/2)+(nrOfMatches%2);
 		System.out.println(numberOfHomeMatches);
 
 		for(int i=0; i<=numberOfHomeMatches-1;i++){
 			//I wrote 101 due to the documentation behind Math.random generating a number in the following intervall: 0<=x<1;
-			probability = (int)((Math.random())*101);
+			probability = (int)((Math.random())*101)+1;
 			//Win probability for home matches.
 			if(probability>0 && probability<=66){
 				homeWins+=1;

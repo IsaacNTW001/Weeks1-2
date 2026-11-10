@@ -1,6 +1,6 @@
 public class A4{
 	public static int base10=0;
-	public static int base=0;
+	public static int base=0;	
 	public static String res="";
 	private static String alphabetString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static char[] alphabetCharArray = alphabetString.toCharArray();
