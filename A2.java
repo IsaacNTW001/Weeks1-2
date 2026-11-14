@@ -20,8 +20,15 @@ public class A2{
 				System.out.println("Username: " + userName);
 				System.out.println("E-mail address: " + email);
 			}
-			else{
-				System.out.println("You must enter a first name and a last name that has more than atleast 3 characters each.");
+			else if(firstName.length()>0 && lastName.length()>0){
+				userName = firstName.substring(0,firstName.length()) + lastName.substring(0,lastName.length())+admissionYear.substring(2,4);
+				String email = userName + "@student.hh.se";
+
+				// WARNING! Do not change these lines. Use exactly these strings as your output.
+
+				System.out.println("Username: " + userName);
+				System.out.println("E-mail address: " + email);
+				//System.out.println("You must enter a first name and a last name that has more than atleast 3 characters each.");
 			}
 
 		}

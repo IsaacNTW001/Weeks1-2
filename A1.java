@@ -13,8 +13,8 @@ public class A1{
 		int years = (int)(totalHours/(dailyEffort*YEAR));
 		int months = (int)(totalHours/dailyEffort%YEAR)/MONTH;
 		int days = (int)((totalHours/dailyEffort%YEAR)%MONTH);
-		int hours =  (int)(((((totalHours/dailyEffort)%YEAR)%MONTH)%days)*HOURS_PER_DAY);
-		int minutes =  (int)(((((((totalHours/dailyEffort)%YEAR)%MONTH)%days)*HOURS_PER_DAY)%hours)*MINUTES_PER_HOUR);
+		int hours =  (int)(((((totalHours/dailyEffort)%YEAR)%MONTH)%days)*dailyEffort);
+		int minutes =  (int)(((((((totalHours/dailyEffort)%YEAR)%MONTH)%days)/HOURS_PER_DAY)));
 
 
 		// WARNING! Do not modify these outputs. Use these exact strings.
